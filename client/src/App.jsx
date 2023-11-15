@@ -1,9 +1,15 @@
 import { useState } from 'react'
-// import style from './assets/components/styles/style.css'
-import Home from './assets/components'
+
+import Home from './assets/components/Home/Home'
 import { Routes, Route } from 'react-router-dom';
 import { NavBar } from './assets/components/NavBar';
-import { Contact } from './assets/components/Contact';
+import Menu from './assets/components/Menu/Menu';
+import Footer from './assets/components/Footer/Footer';
+import Contact from './assets/components/Contact/Contact';
+import Login from './assets/components/Auth/Login';
+import Register from './assets/components/Auth/Register';
+import AddNewProduct from './assets/components/Admin/AddNewProduct'
+
 
 function App() {
  
@@ -14,17 +20,21 @@ function App() {
      <Routes>
      
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<Home />}>
-                    <Route path="us" element={<Home />} />
+                <Route path="/menu" element={<Menu />}> </Route>
+                {/* <Route path="/product-details/:id" element={<ProductDetails />} /> */}
+                    {/* <Route path="us" element={<Home />} />
                     <Route path="mission" element={<Home />} />
-                    <Route path="values" element={<Home />} />
-                </Route>
+                    <Route path="values" element={<Home />} /> */}
+               
                 <Route path="/contacts" element={<Contact />} />
-                <Route path="/characters" element={<Home />} />
-                <Route path="/characters/:id" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/add-product" element={<AddNewProduct />} />
+               
                 <Route path="*" element={<Home />} />
              </Routes>
-     <div>Pizza Bonna</div>
+             <Footer/>
+     
     </>
   )
 }
