@@ -12,7 +12,7 @@ const ProductCreate = () => {
 
         try {
             await pizzaService.create(productData);
-            console.log(productData)
+            
             navigate('/get-all-products');
         } catch (err) {
             // Error notification

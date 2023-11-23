@@ -18,7 +18,7 @@ export default function MenuItem({
                 </div>
                 <div className="d-block">
                     <p>{ingredients}</p>
-                    {/* <button onClick={() => addProduct(123)}>Add to Basket</button> */}
+                    {/* <button onClick={() => addProduct(_id)}>Add to Basket</button> */}
                 </div>
             </div>
         </div>

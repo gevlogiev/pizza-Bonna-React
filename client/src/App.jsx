@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+
+
 import Home from './assets/components/Home/Home'
 import { Routes, Route } from 'react-router-dom';
 import { NavBar } from './assets/components/NavBar';
@@ -12,12 +14,18 @@ import AddNewProduct from './assets/components/Admin/AddNewProduct'
 import GetAllProducts from './assets/components/Admin/GetAllProducts'
 import Page404 from './assets/components/HelpPages/404';
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import { AuthProvider } from './assets/components/context/AuthContext';
+import Logout from './assets/components/Auth/Logout';
+
+
 
 function App() {
 
 
   return (
     <>
+     <AuthProvider>
       <NavBar />
       <Routes>
 
@@ -31,6 +39,7 @@ function App() {
         <Route path="/contacts" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path={"/logout"} element={<Logout />} />
 
 
         {/* Admin Controll Panel */}
@@ -49,7 +58,7 @@ function App() {
         <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
-
+      </AuthProvider>
     </>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const LoginForm = () => {
-    const [user, setUser] = useState('');
+const LoginForm = ({ onLogin }) => {
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleUserChange = (e) => {
-        setUser(e.target.value);
+        setUsername(e.target.value);
     };
 
     const handlePasswordChange = (e) => {
@@ -14,9 +14,8 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log('User:', user);
-        console.log('Password:', password);
+        onLogin(username, password);
+       
 
     };
 
@@ -31,7 +30,7 @@ const LoginForm = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="Потребителско име"
-                                value={user}
+                                value={username}
                                 onChange={handleUserChange}
                             />
                         </div>

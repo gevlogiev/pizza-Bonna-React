@@ -1,6 +1,13 @@
 import { NavLink } from "react-router-dom";
+import AuthContext from "./context/AuthContext";
+import { useContext } from "react";
 
 export const NavBar = () => {
+    const {
+        isAuthenticated,
+        username,
+    } = useContext(AuthContext);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div className="container">
@@ -12,6 +19,9 @@ export const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="ftco-nav">
                     <ul className="navbar-nav ml-auto">
+
+
+
                         <li className="nav-item">
                             <NavLink to="/" className="nav-link" activeclassname="active">
                                 Начало
@@ -24,7 +34,7 @@ export const NavBar = () => {
                         </li>
                         <li className="nav-item">
                             <NavLink to="/services" className="nav-link" activeclassname="active">
-                             Къде да ни откриете   
+                                Къде да ни откриете
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -32,21 +42,34 @@ export const NavBar = () => {
                                 Blog
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/login" className="nav-link" activeclassname="active">
-                                Вход
-                            </NavLink>
-                        </li>
+
                         <li className="nav-item">
                             <NavLink to="/contacts" className="nav-link" activeclassname="active">
                                 Контакти
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/get-all-products" className="nav-link" activeclassname="active">
-                                Меню А
-                            </NavLink>
-                        </li>
+                        {isAuthenticated && (
+                            <>
+                                <li className="nav-item">
+                                    <NavLink to="/get-all-products" className="nav-link" activeclassname="active">
+                                        Меню А
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/logout" className="nav-link" activeclassname="active">
+                                        Изход
+                                    </NavLink>
+                                </li>
+                            </>
+                        )}
+
+                        {!isAuthenticated && (
+                            <li className="nav-item">
+                                <NavLink to="/login" className="nav-link" activeclassname="active">
+                                    Вход
+                                </NavLink>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>
