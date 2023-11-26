@@ -24,12 +24,28 @@ const EditProduct = ({
                 <Modal.Title>Редакция на продукт</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                {/* Your form fields go here */}
-                <label>Name:</label>
+               <div>
+
+                <label>Име на продукта:</label>
                 <input type="text" value={title}
                 //  onChange={handleInputChange} 
                 />
-                {/* Add other input fields as needed */}
+                </div>
+
+
+                  <label>Име на продукта:</label>
+                <select type="text"defaultValue={category}> 
+                <option>123</option>
+                <option>345</option>
+                <option>789</option>
+                <option>111</option>
+                
+                
+                </select>
+
+              
+               
+           
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={closeModal}>

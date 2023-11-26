@@ -8,11 +8,7 @@ export const getAll = async () => {
     return Object.values(result);
 };
 
-export const getOne = async (gameId) => {
-    const result = await request.get(`${baseUrl}/${gameId}`, );
 
-    return result;
-}
 
 export const create = async (productData) => {
     const result = await request.post(baseUrl, productData);
@@ -20,4 +16,9 @@ export const create = async (productData) => {
     return result;
 };
 
-
+export const remove = async (productId) => {
+    const result = await request.remove(`${baseUrl}/${productId}` );
+console.log('opa')
+console.log(result)
+    return result;
+};

@@ -6,7 +6,9 @@ export const NavBar = () => {
     const {
         isAuthenticated,
         username,
+        role,
     } = useContext(AuthContext);
+
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -58,6 +60,11 @@ export const NavBar = () => {
                                 <li className="nav-item">
                                     <NavLink to="/logout" className="nav-link" activeclassname="active">
                                         Изход
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/" className="nav-link" activeclassname="active">
+                                        {username}  {role=='1' ? '(Админ)' : '(Потребител)'}
                                     </NavLink>
                                 </li>
                             </>

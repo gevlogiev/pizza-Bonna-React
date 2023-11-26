@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import useForm from "../hooks/useForm";
 import AuthContext from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,36 +19,51 @@ export default function Login() {
     });
 
     return (
-        <section id="login-page" className="auth">
-            <form id="login" onSubmit={onSubmit}>
+        <div className="col-md-12 ftco-animate d-flex justify-content-center align-items-center">
 
-                <div className="container">
-                    <div className="brand-logo"></div>
-                    <h1>Login</h1>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name={LoginFormKyes.Email}
-                        placeholder="Sokka@gmail.com"
-                        onChange={onChange}
-                        value={values[LoginFormKyes.Email]}
-                    />
+        <form onSubmit={onSubmit} className="contact-form">
+            <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name={LoginFormKyes.Email}
+                    className="form-control"
+                    placeholder="Въведи email"
+                    onChange={onChange}
+                    value={values[LoginFormKyes.Email]}
+                />
+            </div>
+    
+            <div className="form-group">
+                <label htmlFor="login-password">Парола:</label>
+                <input
+                    type="password"
+                    id="login-password"
+                    className="form-control"
+                    name={LoginFormKyes.Password}
+                    placeholder="Въведи парола"
+                    onChange={onChange}
+                    value={values[LoginFormKyes.Password]}
+                />
+            </div>
+    
+            <div className="form-group text-center">
+                <input type="submit" value="Вход" className="btn btn-primary py-3 px-5" />
+            </div>
+        </form>
+    
+        <p className="text-center">
+            <Link to="/register">Регистрация</Link>
+        </p>
+    </div>
+    
+    
 
-                    <label htmlFor="login-pass">Password:</label>
-                    <input
-                        type="password"
-                        id="login-password"
-                        name={LoginFormKyes.Password}
-                        onChange={onChange}
-                        value={values[LoginFormKyes.Password]}
-                    />
-                    <input type="submit" className="btn submit" value="Login" />
-                    <p className="field">
-                        <span>If you don't have profile click <a href="#">here</a></span>
-                    </p>
-                </div>
-            </form>
-        </section>
+
+
+
+
+     
     );
 }
