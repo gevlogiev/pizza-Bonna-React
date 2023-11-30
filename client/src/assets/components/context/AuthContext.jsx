@@ -24,9 +24,11 @@ export const AuthProvider = ({
     };
 
     const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.password);
 
-        setAuth(result);
+       
+        const result = await authService.register(values.email, values.password,2); // Register only with role 2
+
+       setAuth(result);
 
         localStorage.setItem('accessToken', result.accessToken);
 

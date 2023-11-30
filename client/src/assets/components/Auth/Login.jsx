@@ -22,7 +22,7 @@ export default function Login() {
         <div className="col-md-12 ftco-animate d-flex justify-content-center align-items-center">
 
         <form onSubmit={onSubmit} className="contact-form">
-            <div className="form-group">
+            <div className="form-group ">
                 <label htmlFor="email">Email:</label>
                 <input
                     type="email"

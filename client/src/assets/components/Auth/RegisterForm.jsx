@@ -1,91 +1,101 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+
+import AuthContext from '../context/AuthContext';
+import useForm from '../hooks/useForm';
 
 const RegisterForm = () => {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [error, setError] = useState(false);
 
-    const handleUserChange = (e) => {
-        setUser(e.target.value);
-    };
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+        user: '',
+        email: '',
+        pass: '',
+        confPass: '',
+    });
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const handleConfPasswordChange = (e) => {
-        setConfPassword(e.target.value);
-    };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password !== confPassword) {
-            console.log('Паролите не съвпадат!')
+            setError(true)
+            return
         }
 
-        console.log('User:', user);
-        console.log('Password:', password);
-        console.log('ConfPassword:', confPassword);
-        console.log('Email:', email);
+
+        // console.log('User:', user);
+        // console.log('Password:', password);
+        // console.log('ConfPassword:', confPassword);
+        // console.log('Email:', email);
 
     };
 
     return (
-        <div className="col-md-12 ftco-animate d-flex justify-content-center align-items-center">
 
-            <form onSubmit={handleSubmit} className="contact-form">
-                <div className="row">
+        <section id="create-page">
+            <form id="create" onSubmit={onSubmit} className="container">
+                <h1>Регистрирай се</h1>
 
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Потребителско име"
-                            value={user}
-                            onChange={handleUserChange}
-                        />
-                    </div>
+
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="user"
+                        className="form-control"
+                        placeholder="Потребителско име"
+                        value={values.user}
+                        onChange={onChange}
+                    />
                     <div className="form-group">
                         <input
                             type="email"
+                            name="email"
                             className="form-control"
                             placeholder="Email"
-                            value={user}
-                            onChange={handleEmailChange}
+                            value={values.email}
+                            onChange={onChange}
                         />
                     </div>
 
                     <div className="form-group">
                         <input
                             type="password"
+                            name="password"
                             className="form-control"
                             placeholder="Парола"
-                            value={password}
-                            onChange={handlePasswordChange}
+                            value={values.password}
+                            onChange={onChange}
                         />
                     </div>
 
                     <div className="form-group">
                         <input
                             type="password"
+                            name="confPass"
                             className="form-control"
                             placeholder="Повторете парола"
-                            value={confPassword}
-                            onChange={handleConfPasswordChange}
+                            value={values.confPassword}
+                            onChange={onChange}
                         />
+                        {error && (<span className='text-danger'>Паролите не съвпадат ! </span>)}
                     </div>
-
                 </div>
                 <div className="form-group">
                     <input type="submit" value="Регистрация" className="btn btn-primary py-3 px-5" />
                 </div>
             </form>
-        </div>
+        </section>
+
+
+
+
+
+
+
     );
 };
 

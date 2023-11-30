@@ -35,14 +35,32 @@ const EditProduct = ({
 
                   <label>Име на продукта:</label>
                 <select type="text"defaultValue={category}> 
-                <option>123</option>
-                <option>345</option>
-                <option>789</option>
-                <option>111</option>
-                
-                
-                </select>
+                        <option value={1}>Пица</option>
+                        <option value={2}>Напитка</option>
+                        <option value={3}>Десерт</option>
+                        <option value={4}>Алкохол</option>
+                    </select>
+                <div>
 
+<label>Цена-малка:</label>
+<input type="text" value={priceSmall}
+//  onChange={handleInputChange} 
+/>
+</div>
+<div>
+
+<label>Цена-голяма:</label>
+<input type="text" value={priceBig}
+//  onChange={handleInputChange} 
+/>
+</div>
+<div>
+
+<label>Съставки:</label>
+<input type="text" value={ingredients}
+//  onChange={handleInputChange} 
+/>
+</div>
               
                
            

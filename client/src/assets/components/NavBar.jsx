@@ -39,12 +39,7 @@ export const NavBar = () => {
                                 Къде да ни откриете
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/blog" className="nav-link" activeclassname="active">
-                                Blog
-                            </NavLink>
-                        </li>
-
+                     
                         <li className="nav-item">
                             <NavLink to="/contacts" className="nav-link" activeclassname="active">
                                 Контакти
@@ -52,11 +47,31 @@ export const NavBar = () => {
                         </li>
                         {isAuthenticated && (
                             <>
-                                <li className="nav-item">
-                                    <NavLink to="/get-all-products" className="nav-link" activeclassname="active">
-                                        Меню А
-                                    </NavLink>
-                                </li>
+                                {role == 1 && (
+
+                                    <li className="nav-item">
+                                        <NavLink to="/get-all-products" className="nav-link" activeclassname="active">
+                                            Меню А
+                                        </NavLink>
+                                    </li>
+                                )}
+
+                                {role == 2 && (
+                                    <>
+                                        <li className="nav-item">
+                                            <NavLink to="/orders" className="nav-link" activeclassname="active">
+                                                Поръчки
+                                            </NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink to="/basket" className="nav-link" activeclassname="active">
+                                                Кошница
+                                            </NavLink>
+                                        </li>
+                                    </>
+                                )}
+
+
                                 <li className="nav-item">
                                     <NavLink to="/logout" className="nav-link" activeclassname="active">
                                         Изход
@@ -64,7 +79,7 @@ export const NavBar = () => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/" className="nav-link" activeclassname="active">
-                                        {username}  {role=='1' ? '(Админ)' : '(Потребител)'}
+                                        {username}  {role == '1' ? '(Админ)' : '(Потребител)'}
                                     </NavLink>
                                 </li>
                             </>

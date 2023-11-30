@@ -70,7 +70,22 @@ const GetAllProducts = () => {
         {products.map((product, index) => (
           <tr key={index}>
             <td>{index + 1}. {product.title}</td>
-            <td>{product.category}</td>
+			<td>
+  {(() => {
+    switch (product.category) {
+      case 1:
+        return "Пица";
+      case 2:
+        return "Напиткa";
+      case 3:
+        return "Десерт";
+      case 4:
+        return "Алкохол";
+      default:
+        return "Непозната";
+    }
+  })()}
+</td>
             <td>{product.priceSmall}</td>
             <td>{product.priceBig}</td>
             <td>{product.ingredients}</td>

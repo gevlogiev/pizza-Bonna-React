@@ -15,43 +15,57 @@ const ProductCreate = () => {
             
             navigate('/get-all-products');
         } catch (err) {
-            // Error notification
+            
             console.log(err);
         }
     }
 
     return (
-        <section id="create-page" className="auth">
-            <form id="create" onSubmit={createProductSubmitHandler}>
-                <div className="container">
-                    <h1>Create product</h1>
-                    <label htmlFor="leg-title">Име на продукт:</label>
-                    <input type="text" id="title" name="title" placeholder="Въведете име на продукт" />
+      
+        <section id="create-page">
+        <form id="create" onSubmit={createProductSubmitHandler} className="container">
+            <h1>Добавяне на нов продукт</h1>
+            
+            <div className="mb-3 form-group">
+                <label htmlFor="title" className="form-label">Име на продукт:</label>
+                <input type="text" className="form-control" id="title" name="title" placeholder="Въведете име на продукт" />
+            </div>
 
-                    <label htmlFor="category">Категория:</label>
-                    <select>
-                        <option value={1}>Пица</option>
-                        <option value={2}>Напитка</option>
-                        <option value={3}>Десерт</option>
-                        <option value={4}>Алкохол</option>
-                    </select>
-                    {/* <input type="text" id="category" name="category" placeholder="Изберете категория" /> */}
+            <div className="mb-3 form-group">
+                <label htmlFor="category" className="form-label">Категория:</label>
+                <select className="form-select" id="category" name="category">
+                    <option value={1}>Пица</option>
+                    <option value={2}>Напитка</option>
+                    <option value={3}>Десерт</option>
+                    <option value={4}>Алкохол</option>
+                </select>
+            </div>
+          
 
-                    <label htmlFor="priceSmall">Цена малка:</label>
-                    <input type="text" id="priceSmall" name="priceSmall" placeholder="Въведете цена малка" />
 
-                    <label htmlFor="priceBig">Цена голяма:</label>
-                    <input type="text" id="priceBig" name="priceBig" placeholder="Въведете цена голяма" />
+            <div className="mb-3 form-group">
+                <label htmlFor="priceSmall" className="form-label">Цена малка:</label>
+                <input type="text" className="form-control" id="priceSmall" name="priceSmall" placeholder="Въведете цена малка" />
+            </div>
 
-                    <label htmlFor="game-img">Снимка:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Снимка на продукта" />
+            <div className="mb-3">
+                <label htmlFor="priceBig form-group" className="form-label">Цена голяма:</label>
+                <input type="text" className="form-control" id="priceBig" name="priceBig" placeholder="Въведете цена голяма" />
+            </div>
 
-                    <label htmlFor="ingredients">Съставки:</label>
-                    <textarea name="ingredients" id="ingredients"></textarea>
-                    <input className="btn submit" type="submit" value="Добави продукт" />
-                </div>
-            </form>
-        </section>
+            <div className="mb-3 form-group">
+                <label htmlFor="imageUrl" className="form-label">Снимка:</label>
+                <input type="text" className="form-control" id="imageUrl" name="imageUrl" placeholder="Снимка на продукта" />
+            </div>
+
+            <div className="mb-3 form-group">
+                <label htmlFor="ingredients" className="form-label">Съставки:</label>
+                <textarea className="form-control" id="ingredients" name="ingredients"></textarea>
+            </div>
+
+            <input className="btn btn-primary" type="submit" value="Добави продукт" />
+        </form>
+    </section>
     );
 }
 export default ProductCreate

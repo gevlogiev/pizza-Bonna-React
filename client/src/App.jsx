@@ -17,6 +17,8 @@ import Page404 from './assets/components/HelpPages/404';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider } from './assets/components/context/AuthContext';
 import Logout from './assets/components/Auth/Logout';
+import { BasketProvider } from './assets/components/Services/BasketContext';
+import Basket from './assets/components/Basket/Basket';
 
 
 
@@ -25,39 +27,41 @@ function App() {
 
   return (
     <>
-     <AuthProvider>
-      <NavBar />
-      <Routes>
-
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />}> </Route>
-        {/* <Route path="/product-details/:id" element={<ProductDetails />} /> */}
-        {/* <Route path="us" element={<Home />} />
+      <AuthProvider>
+      <BasketProvider>
+        <NavBar />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />}> </Route>
+            {/* <Route path="/product-details/:id" element={<ProductDetails />} /> */}
+            {/* <Route path="us" element={<Home />} />
                     <Route path="mission" element={<Home />} />
                     <Route path="values" element={<Home />} /> */}
 
-        <Route path="/contacts" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path={"/logout"} element={<Logout />} />
+            <Route path="/contacts" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path={"/logout"} element={<Logout />} />
 
 
-        {/* Admin Controll Panel */}
-        <Route path="/add-product" element={<AddNewProduct />} />
-        <Route path="/get-all-products" element={<GetAllProducts />} />
-        {/* ************** */}
+            {/* Admin Controll Panel */}
+            <Route path="/add-product" element={<AddNewProduct />} />
+            <Route path="/get-all-products" element={<GetAllProducts />} />
+            {/* ************** */}
 
 
 
-        {/* User Auth Panel */}
-        {/* <Route path="/add-product" element={<AddNewProduct />} />
-          <Route path="/get-all-products" element={<GetAllProducts />} /> */}
-        {/* ************** */}
+            {/* User Auth Panel */}
+            <Route path="/basket" element={<Basket />} />
+          <Route path="/get-all-products" element={<GetAllProducts />} />
+            {/* ************** */}
 
 
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-      <Footer />
+            <Route path="*" element={<Page404 />} />
+         
+        </Routes>
+        <Footer />
+        </BasketProvider>
       </AuthProvider>
     </>
   )
