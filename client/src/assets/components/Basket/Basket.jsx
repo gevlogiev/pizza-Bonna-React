@@ -24,7 +24,7 @@ const Basket = () => {
       <ul>
         {basket.map((product, index) => (
           <li key={index}>
-            {product.name} - ед.цена: {product.price} - Количество: {product.quantity} = Общо: {(product.price * product.quantity).toFixed(2)}
+            {product.name} - ед.цена: {product.price} - Количество: {product.quantity}  Общо: {(product.price * product.quantity).toFixed(2)}
             <button onClick={() => updateQuantity(product.name, product.quantity - 1)}>-</button>
             <button onClick={() => updateQuantity(product.name, product.quantity + 1)}>+</button>
             <button onClick={() => removeFromBasket(product.name)}>Remove</button>
