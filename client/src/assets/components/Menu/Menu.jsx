@@ -1,12 +1,12 @@
-import { useState, useEffect,useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import MenuItem from './MenuItem';
-import { useBasket } from '../Services/BasketContext';
+import { useBasket } from '../context/BasketContext';
 
 
 
 const Menu = () => {
 
-    const {addToBasket} = useBasket()
+    const { addToBasket } = useBasket()
 
     const [productItems, setProductItems] = useState([]);
 
@@ -20,10 +20,9 @@ const Menu = () => {
     }, [])
 
     const handleAddToBasket = (product) => {
-        // Assuming you have a product object
         addToBasket(product);
-      };
-    console.log(productItems)
+    };
+
     return (
         <>
             <div className="container">
@@ -51,13 +50,14 @@ const Menu = () => {
                 </div>
                 {/* ******************************** */}
 
-                <button onClick={() => handleAddToBasket({ name: 'Example Product', price: 10 })}>
-        Add to Basket
-      </button>
+
                 <div className="row">
                     {productItems.map((productItem, index) => (
                         <div key={productItem._id} className={`col-md-6 ${index % 2 === 0 ? 'order-md-1' : 'order-md-2'}`}>
                             <MenuItem {...productItem} />
+                            <button onClick={() => handleAddToBasket({ name: productItem.title, price: productItem.priceSmall})}>
+                                Добави
+                            </button>
                         </div>
                     ))}
                 </div>

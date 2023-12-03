@@ -17,7 +17,7 @@ import Page404 from './assets/components/HelpPages/404';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider } from './assets/components/context/AuthContext';
 import Logout from './assets/components/Auth/Logout';
-import { BasketProvider } from './assets/components/Services/BasketContext';
+import { BasketProvider } from './assets/components/context/BasketContext';
 import Basket from './assets/components/Basket/Basket';
 
 
