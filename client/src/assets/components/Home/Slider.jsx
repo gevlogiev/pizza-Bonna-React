@@ -31,7 +31,7 @@ return (
         </div>
       </div>
     </div>
-
+{/* 
     <div className="slider-item">
         <div className="overlay"></div>
       <div className="container">
@@ -49,9 +49,9 @@ return (
 
         </div>
       </div>
-    </div>
+    </div> */}
 
-    <div className="slider-item" 
+    {/* <div className="slider-item" 
     style={sliderStyle2}
     >
         <div className="overlay"></div>
@@ -67,7 +67,7 @@ return (
 
         </div>
       </div>
-    </div>
+    </div> */}
   </section>
 </>
 )

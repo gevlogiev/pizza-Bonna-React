@@ -55,8 +55,16 @@ export const BasketProvider = ({ children }) => {
     setBasket([]);
   };
 
+  const orderProducts = () => {
+
+
+   console.log(basket);
+
+   clearBasket();
+  };
+
   return (
-    <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket, clearBasket }}>
+    <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket, clearBasket,orderProducts }}>
       {children}
     </BasketContext.Provider>
   );

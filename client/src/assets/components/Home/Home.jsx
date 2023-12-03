@@ -1,4 +1,5 @@
-import Section2 from "./Section2"
+import Latest from "./LatestAdd"
+import SectionWithInfo from "./SectionWithInfo"
 import Slider  from "./Slider"
 
 
@@ -9,8 +10,9 @@ return(
 <>
 
 <Slider/>
-<Section2/>
-<div>Home Page</div>
+<SectionWithInfo/>
+<Latest/>
+
 
 
 </>

@@ -3,7 +3,7 @@ import React from 'react';
 import { useBasket } from '../context/BasketContext';
 
 const Basket = () => {
-  const { basket, clearBasket, removeFromBasket } = useBasket();
+  const { basket, clearBasket, removeFromBasket, orderProducts } = useBasket();
 
   const updateQuantity = (productName, newQuantity) => {
     const updatedBasket = basket.map((product) => {
@@ -17,6 +17,9 @@ const Basket = () => {
 
     removeFromBasket(productName, filteredBasket);
   };
+
+
+
 
   return (
     <div>
@@ -32,6 +35,7 @@ const Basket = () => {
         ))}
       </ul>
       <button onClick={clearBasket}>Изчисти кошницата</button>
+      <button onClick={orderProducts}>Поръчай</button>
     </div>
   );
 };

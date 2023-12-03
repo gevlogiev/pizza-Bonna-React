@@ -34,7 +34,6 @@ const GetAllProducts = () => {
 	}
 
 
-
 	const handleDeleteProduct = async (productId) => {
 		try {
 			const result = await request.remove(`${baseUrl}/${productId}`);
@@ -110,7 +109,7 @@ const GetAllProducts = () => {
       </tbody>
     </table>
     {showEditProduct && <EditProduct {...editProduct} closed={showEditProduct} closeModal={closeModal} />}
-    {products.length === 0 && <h3 className="no-articles text-center">No articles yet</h3>}
+    {products.length === 0 && <h3 className="no-articles text-center">Няма продукти</h3>}
     <div className="text-center">
       <Link to='/add-product' className="btn btn-success">
         Добави продукт
