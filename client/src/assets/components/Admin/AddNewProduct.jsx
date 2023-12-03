@@ -61,6 +61,16 @@ const ProductCreate = () => {
             <div className="mb-3 form-group">
                 <label htmlFor="ingredients" className="form-label">Съставки:</label>
                 <textarea className="form-control" id="ingredients" name="ingredients"></textarea>
+            </div> 
+            
+            <div className="mb-3 form-group">
+                <label htmlFor="allergens" className="form-label">Алергени:</label>
+                <textarea className="form-control" id="allergens" name="allergens"></textarea>
+            </div>
+            
+             <div className="mb-3 form-group">
+                <label htmlFor="description" className="form-label">Допълнителна инфорцмация:</label>
+                <textarea className="form-control" id="description" name="description"></textarea>
             </div>
 
             <input className="btn btn-primary" type="submit" value="Добави продукт" />

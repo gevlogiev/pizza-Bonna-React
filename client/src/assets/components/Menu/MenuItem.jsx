@@ -11,21 +11,42 @@ export default function MenuItem({
     ingredients
 }) {
     const { addToBasket } = useBasket()
-
-
     const handleAddToBasket = (product) => {
-       
-        addToBasket(product);
-       
-          
+        addToBasket(product); 
     };
+
+
+
+
+    const [productInfo, setProductInfo] = useState('');
+
+
+   
+
+
+
+    const detailsProduct = (_id) => {
+       
+        fetch('')
+          .then(response => response.json())
+          .then(data => {
+            
+            setProductInfo(data);
+            
+            setIsModalOpen(true);
+          })
+          .catch(error => {
+            console.error('Error fetching product information:', error);
+          });
+      };
     return (
         <div className="pricing-entry d-flex ftco-animate">
             <img className="img" src={imageUrl} />
             <div className="desc pl-3">
                 <div className="d-flex justify-content-between  text align-items-center">
                     <h3><span>{title}</span></h3>
-                    <span className="price">{priceSmall}</span>
+                    <span className="price">{priceSmall} <span  onClick={(e) => detailsProduct(_id)}>ⓘ</span></span>
+                    
                 </div>
                 <div className="d-block d-flex justify-content-between align-items-center">
                     <p>{ingredients}</p>
@@ -33,6 +54,7 @@ export default function MenuItem({
                         onClick={() => handleAddToBasket({ name: title, price: priceSmall })}
                     >Добави
                     </a>
+                    
                 </div>
             </div>
         </div>
