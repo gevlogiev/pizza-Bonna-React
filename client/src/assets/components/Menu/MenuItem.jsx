@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+
+import { useBasket } from '../context/BasketContext';
+
 
 export default function MenuItem({
     _id,
@@ -8,20 +10,34 @@ export default function MenuItem({
     imageUrl,
     ingredients
 }) {
+    const { addToBasket } = useBasket()
+
+
+    const handleAddToBasket = (product) => {
+       
+        addToBasket(product);
+       
+          
+    };
     return (
         <div className="pricing-entry d-flex ftco-animate">
             <img className="img" src={imageUrl} />
             <div className="desc pl-3">
-                <div className="d-flex text align-items-center">
+                <div className="d-flex justify-content-between  text align-items-center">
                     <h3><span>{title}</span></h3>
-                    <span className="price">{priceSmall}/{priceBig}</span>
+                    <span className="price">{priceSmall}</span>
                 </div>
-                <div className="d-block">
+                <div className="d-block d-flex justify-content-between align-items-center">
                     <p>{ingredients}</p>
-                    {/* <button onClick={() => addProduct(_id)}>Add to Basket</button> */}
+                    <a className="ml-2 btn btn-white btn-outline-white"
+                        onClick={() => handleAddToBasket({ name: title, price: priceSmall })}
+                    >Добави
+                    </a>
                 </div>
             </div>
         </div>
 
     );
 }
+
+

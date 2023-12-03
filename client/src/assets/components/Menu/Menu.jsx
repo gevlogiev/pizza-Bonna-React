@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
 import MenuItem from './MenuItem';
-import { useBasket } from '../context/BasketContext';
+
 
 
 
 const Menu = () => {
 
-    const { addToBasket } = useBasket()
+    
 
     const [productItems, setProductItems] = useState([]);
 
@@ -19,9 +19,7 @@ const Menu = () => {
             .catch(error => console.error(error));
     }, [])
 
-    const handleAddToBasket = (product) => {
-        addToBasket(product);
-    };
+ 
 
     return (
         <>
@@ -55,9 +53,7 @@ const Menu = () => {
                     {productItems.map((productItem, index) => (
                         <div key={productItem._id} className={`col-md-6 ${index % 2 === 0 ? 'order-md-1' : 'order-md-2'}`}>
                             <MenuItem {...productItem} />
-                            <button onClick={() => handleAddToBasket({ name: productItem.title, price: productItem.priceSmall})}>
-                                Добави
-                            </button>
+                          
                         </div>
                     ))}
                 </div>

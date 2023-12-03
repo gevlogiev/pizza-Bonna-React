@@ -7275,7 +7275,11 @@ body {
   font-weight: 300;
   color: gray;
   background: url(./../images/bg_4.jpg) no-repeat fixed;
-  background-size: cover; }
+  background-size: cover;
+
+  
+
+}
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -8207,7 +8211,9 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   padding: 7em 0;
-  background: #101315; }
+  background: #101315;
+ 
+}
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
     letter-spacing: .1em; }

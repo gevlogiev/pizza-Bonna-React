@@ -34,17 +34,14 @@ export const NavBar = () => {
                                 Меню
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/services" className="nav-link" activeclassname="active">
-                                Къде да ни откриете
-                            </NavLink>
-                        </li>
                      
-                        <li className="nav-item">
+                     
+                       <li className="nav-item">
                             <NavLink to="/contacts" className="nav-link" activeclassname="active">
                                 Контакти
                             </NavLink>
                         </li>
+                      
                         {isAuthenticated && (
                             <>
                                 {role == 1 && (
@@ -92,6 +89,7 @@ export const NavBar = () => {
                                 </NavLink>
                             </li>
                         )}
+                        
                     </ul>
                 </div>
             </div>

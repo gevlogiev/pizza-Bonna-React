@@ -1,5 +1,6 @@
-// BasketContext.js
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import Swal from 'sweetalert2'
 
 const BasketContext = createContext();
 
@@ -27,7 +28,7 @@ export const BasketProvider = ({ children }) => {
 
     if (existingProductIndex !== -1) {  // ako imam veche takuv, dobavqm 1 kum kolichestvoto;
 
-      console.log(existingProductIndex);
+      
      
       setBasket((prevBasket) => {
         const updatedBasket = [...prevBasket];
@@ -41,6 +42,17 @@ export const BasketProvider = ({ children }) => {
     
       setBasket((prevBasket) => [...prevBasket, { ...product, quantity: 1 }]);
     }
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Успешно добавихте ${product.name} в кошницата`,
+      showConfirmButton: false,
+      timer: 1500,
+      customClass: {
+        popup: 'bg-dark text-warning',
+      }
+    });
   };
 
   const removeFromBasket = (productName, updatedBasket) => {
