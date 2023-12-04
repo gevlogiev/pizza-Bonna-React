@@ -18,27 +18,27 @@ export default function MenuItem({
 
 
 
-    const [productInfo, setProductInfo] = useState('');
+    // const [productInfo, setProductInfo] = useState('');
 
 
    
 
 
 
-    const detailsProduct = (_id) => {
+    // const detailsProduct = (_id) => {
        
-        fetch('')
-          .then(response => response.json())
-          .then(data => {
+    //     fetch('')
+    //       .then(response => response.json())
+    //       .then(data => {
             
-            setProductInfo(data);
+    //         setProductInfo(data);
             
-            setIsModalOpen(true);
-          })
-          .catch(error => {
-            console.error('Error fetching product information:', error);
-          });
-      };
+    //         setIsModalOpen(true);
+    //       })
+    //       .catch(error => {
+    //         console.error('Error fetching product information:', error);
+    //       });
+    //   };
     return (
         <div className="pricing-entry d-flex ftco-animate">
             <img className="img" src={imageUrl} />
