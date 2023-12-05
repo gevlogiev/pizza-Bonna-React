@@ -1,13 +1,14 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
+import * as ordersService from './../Services/ordersService'
 
 const BasketContext = createContext();
 
 export const useBasket = () => {
   const context = useContext(BasketContext);
   if (!context) {
-    throw new Error('useBasket must be used within a BasketProvider');
+   console.log('Err basket context');
   }
   return context;
 };
@@ -68,11 +69,15 @@ export const BasketProvider = ({ children }) => {
   };
 
   const orderProducts = () => {
+  
 
+    
+
+    ordersService.create(basket)
 
    console.log(basket);
 
-   clearBasket();
+  //  clearBasket();
   };
 
   return (

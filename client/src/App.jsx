@@ -20,6 +20,7 @@ import Logout from './assets/components/Auth/Logout';
 import { BasketProvider } from './assets/components/context/BasketContext';
 import Basket from './assets/components/Basket/Basket';
 import AuthGuard from './assets/components/Guards/AuthGuards';
+import GetAllOrders from './assets/components/Orders/getAllOrders';
 
 
 
@@ -55,7 +56,7 @@ function App() {
 
               {/* User Auth Panel */}
               <Route path="/basket" element={<Basket />} />
-              <Route path="/get-all-products" element={<GetAllProducts />} />
+              <Route path="/orders" element={<GetAllOrders />} />
               {/* ************** */}
             </Route>
 

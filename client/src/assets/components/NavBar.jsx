@@ -48,7 +48,7 @@ export const NavBar = () => {
 
                                     <li className="nav-item">
                                         <NavLink to="/get-all-products" className="nav-link" activeclassname="active">
-                                            Меню А
+                                            Продукти
                                         </NavLink>
                                     </li>
                                 )}

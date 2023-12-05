@@ -13,6 +13,8 @@ const EditProduct = ({
         priceSmall:'',
         priceBig:'',
         ingredients:'',
+        allergens:'',
+        description:'',
     });
 
 
@@ -89,13 +91,25 @@ const EditProduct = ({
                     />
                 </div>
                 <div>
-
                     <label>Съставки:</label>
                     <input type="text" name='ingredients' value={product.ingredients}
                         onChange={handleInputChange}
                     />
                 </div>
 
+                <div>
+                    <label>Алергени:</label>
+                    <input type="text" name='allergens' value={product.allergens}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
+                <div>
+                    <label>Описание:</label>
+                    <input type="text" name='description' value={product.description}
+                        onChange={handleInputChange}
+                    />
+                </div>
 
 
             </Modal.Body>
