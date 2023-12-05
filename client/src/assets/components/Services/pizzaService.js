@@ -7,13 +7,19 @@ export const getAll = async () => {
     return Object.values(result);
 };
 
+export const getDetails =  async (_id) => {
+    const result = await request.get(`${baseUrl}/${_id}`, );
+
+    return result;
+}
+
 export const getLatest = async () => {
     const query = new URLSearchParams({
         offset: 0,
         pageSize: 3,
     });
+    const result = await request.get(`${baseUrl}?sortBy=_createdOn%20desc&${query}`);
 
-    const result = await request.get(`${baseUrl}?${query}`);
     return result;
 }
 
@@ -24,6 +30,14 @@ export const create = async (productData) => {
 
     return result;
 };
+
+export const edit = async (_id,productData) => {
+    const result = await request.put(`${baseUrl}/${_id}`, productData);
+console.log(result);
+    return result;
+
+};
+
 
 export const remove = async (productId) => {
     const result = await request.remove(`${baseUrl}/${productId}` );

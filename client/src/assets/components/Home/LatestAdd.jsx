@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as pizzaService from './../Services/pizzaService'
 import { useBasket } from "../context/BasketContext";
+import AuthContext from "../context/AuthContext";
 
 
 
 const Latest = () => {
 
     const {addToBasket} = useBasket();
+    const {isAuthenticated} = useContext(AuthContext)
     const [latestAdd, setLatestAdd] = useState([]);
 
     useEffect(() => {
@@ -44,11 +46,13 @@ const Latest = () => {
                                     <h3>{pizza.title}</h3>
                                     <p>{pizza.ingredients} </p>
                                     <p className="price"><span>{pizza.priceSmall}</span> 
+{isAuthenticated && (
 
-                                    <a className="ml-2 btn btn-white btn-outline-white" onClick={() => handleAddToBasket({ name: pizza.title, price: pizza.priceSmall})}>
+    <a className="ml-2 btn btn-white btn-outline-white" onClick={() => handleAddToBasket({ name: pizza.title, price: pizza.priceSmall, id: _id})}>
                                 Добави
                             </a>
-                                    {/* <a href="#" className="ml-2 btn btn-white btn-outline-white">Добави </a> */}
+                                        )}
+                                   
                                     </p>
                                 </div>
                             </div>

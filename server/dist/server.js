@@ -1356,7 +1356,7 @@
                 description: "Допълнителна информация за продукта",
                 _id:"3987279d-0ad4-4afb-8ca9-5b256ae3b298",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
-                _createdOn: 1613551279012
+                _createdOn: 1701011384263
             },
             "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
                 priceSmall: "4.60",
@@ -1396,7 +1396,7 @@
                 _createdOn: 1701011384263,
                 _id: "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
-                _createdOn: 1613551279012
+              
             }
         },
         comments: {

@@ -35,7 +35,7 @@ const Menu = () => {
 
 
                 {/* CATEGORIES ******************************** */}
-                <div className="col-md-12 nav-link-wrap mb-5">
+                {/* <div className="col-md-12 nav-link-wrap mb-5">
                     <div className="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a className="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Пица</a>
 
@@ -45,7 +45,7 @@ const Menu = () => {
 
                         <a className="nav-link" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Алкохол</a>
                     </div>
-                </div>
+                </div> */}
                 {/* ******************************** */}
 
 

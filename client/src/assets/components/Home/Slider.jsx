@@ -22,7 +22,9 @@ return (
               <span className="subheading">Оригинална ITALIAN рецепта </span>
             <h1 className="mb-4">Пица Маргарита</h1>
             <p className="mb-4 mb-md-5">Насладете се на любимата класическа Италианска пица. Любима на малки и големи !</p>
-            <p><a href="#" className="btn btn-primary p-3 px-xl-4 py-xl-3">Поръчай сега</a> <Link to='/menu' className="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Виж меню</Link></p>
+            <p>
+              {/* <a href="#" className="btn btn-primary p-3 px-xl-4 py-xl-3">Поръчай сега</a>  */}
+            <Link to='/menu' className="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Виж меню</Link></p>
           </div>
           <div className="col-md-6 ftco-animate">
               <img src="./images/bg_1.png" className="img-fluid" alt=""/>
