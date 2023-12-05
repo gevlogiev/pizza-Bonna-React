@@ -4,6 +4,7 @@ const baseUrl = 'http://localhost:3030/data/orders'
 
 export const getAll = async () => {
     const result = await request.get(baseUrl);
+    // console.log(result); 
     return Object.values(result);
 };
 
