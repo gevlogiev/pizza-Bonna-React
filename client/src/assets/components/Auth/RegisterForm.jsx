@@ -37,7 +37,7 @@ const RegisterForm = () => {
     return (
 
         <section id="create-page">
-            <form id="create" onSubmit={onSubmit} className="container">
+            <form id="create" onSubmit={onSubmit} className="container h-cont">
                 <h1>Регистрирай се</h1>
 
 

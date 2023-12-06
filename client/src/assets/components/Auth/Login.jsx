@@ -19,7 +19,7 @@ export default function Login() {
     });
 
     return (
-        <div className="col-md-12 ftco-animate d-flex justify-content-center align-items-center">
+        <div className="col-md-12 ftco-animate d-flex justify-content-center align-items-center h-cont">
 
         <form onSubmit={onSubmit} className="contact-form">
             <div className="form-group ">

@@ -71,9 +71,8 @@ export const BasketProvider = ({ children }) => {
 
   const orderProducts = () => {
 
+    
     ordersService.create(basket)
-
-
     clearBasket();
   };
 

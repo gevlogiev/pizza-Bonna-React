@@ -39,7 +39,7 @@ const GetAllOrders = () => {
 
 
     return (
-        <div>
+        <div className="container h-cont">
             <span>Поръчка</span>
             <table className="table">
                 <thead>

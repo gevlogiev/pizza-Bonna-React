@@ -23,7 +23,7 @@ const Menu = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container h-cont">
                 <div className="row justify-content-center mb-5 pb-3 mt-5 pt-5">
                     <div className="col-md-7 heading-section text-center ftco-animate">
                         <h2 className="mb-4">Нашите предложения</h2>
