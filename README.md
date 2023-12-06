@@ -1,30 +1,34 @@
 Pizza Bonna React Project
-Welcome to the Pizza Bonna React project! This web application allows users to browse a menu of delicious pizzas, create orders, and manage products. The system includes two main roles: Admin and User.
+Welcome to the Pizza Bonna React project! 
+This web application allows users to browse a menu of delicious pizzas, create orders, and manage products. The system includes two main roles: Admin and User.
 
 Getting Started
 To run the project locally, follow these steps:
 
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/pizza-bonna-react.git
+
+git clone https://github.com/gevlogiev/pizza-bonna-react.git
 Navigate to the project directory:
 
-bash
-Copy code
+
+
 cd pizza-bonna-react
 Install dependencies:
 
-bash
-Copy code
+
+
 npm install
 Start the development server:
 
-bash
-Copy code
+
+
 npm start
 Open your browser and visit http://localhost:3000 to view the Pizza Bonna React application.
+
+on server:
+cd to dist folder
+in terminal node server.js
 
 Roles and Features
 Admin
