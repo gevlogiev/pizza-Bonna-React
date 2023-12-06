@@ -29,8 +29,6 @@ export const BasketProvider = ({ children }) => {
 
     if (existingProductIndex !== -1) {  // ako imam veche takuv, dobavqm 1 kum kolichestvoto;
 
-
-
       setBasket((prevBasket) => {
         const updatedBasket = [...prevBasket];
         updatedBasket[existingProductIndex] = {
@@ -55,6 +53,9 @@ export const BasketProvider = ({ children }) => {
       }
     });
   };
+
+
+
 
   const removeFromBasket = (productName, updatedBasket) => {
     if (updatedBasket) {

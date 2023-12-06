@@ -8,8 +8,8 @@ import AuthContext from "../context/AuthContext";
 
 const Latest = () => {
 
-    const {addToBasket} = useBasket();
-    const {isAuthenticated} = useContext(AuthContext)
+    const { addToBasket } = useBasket();
+    const { isAuthenticated } = useContext(AuthContext)
     const [latestAdd, setLatestAdd] = useState([]);
 
     useEffect(() => {
@@ -40,19 +40,19 @@ const Latest = () => {
 
                         <div key={index} className="col-lg-4 d-flex ftco-animate">
                             <div className="services-wrap d-flex">
-                            <img className="img  w-80 h-80" src={pizza.imageUrl}   />
-                               
+                                <img className="img  w-80 h-80" src={pizza.imageUrl} />
+
                                 <div className="text p-4">
                                     <h3>{pizza.title}</h3>
                                     <p>{pizza.ingredients} </p>
-                                    <p className="price"><span>{pizza.priceSmall}</span> 
-{isAuthenticated && (
+                                    <p className="price"><span>{pizza.priceSmall}</span>
+                                        {isAuthenticated && (
 
-    <a className="ml-2 btn btn-white btn-outline-white" onClick={() => handleAddToBasket({ name: pizza.title, price: pizza.priceSmall, id: _id})}>
-                                Добави
-                            </a>
+                                            <a className="ml-2 btn btn-white btn-outline-white" onClick={() => handleAddToBasket({ name: pizza.title, price: pizza.priceSmall, id: pizza._id })}>
+                                                Добави
+                                            </a>
                                         )}
-                                   
+
                                     </p>
                                 </div>
                             </div>

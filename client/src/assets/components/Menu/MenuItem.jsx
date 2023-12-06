@@ -51,14 +51,14 @@ export default function MenuItem({
                     </div>
                     <div className="d-block d-flex justify-content-between align-items-center">
                         <p>{ingredients}</p>
-{isAuthenticated && (
- <a className="ml-2 btn btn-white btn-outline-white"
- onClick={() => handleAddToBasket({ name: title, price: priceSmall })}
->Добави
-</a>
+                        {isAuthenticated && (
+                            <a className="ml-2 btn btn-white btn-outline-white"
+                                onClick={() => handleAddToBasket({ name: title, price: priceSmall, id: _id })}
+                            >Добави
+                            </a>
 
-) }
-                       
+                        )}
+
 
                     </div>
                 </div>
