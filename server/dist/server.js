@@ -1488,12 +1488,13 @@
         },
         orders: {
             "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080": {
-                username : 'Петър',
-                totalPrice : "tttt",
-                note: "Допълнителна информация за 234",
-                products: [ "Prepare ingredients",
-                "Mix ingredients",
-                "Cook until done"],
+                // username : 'Петър',
+                // totalPrice : "tttt",
+                // note: "Допълнителна информация за 234",
+                products: [  
+                    {name: 'Пица Маргарита', price: '4.60', quantity: 3},
+                    {name: 'Пица Италиана', price: '4.60', quantity: 2},
+                ],
                 _createdOn: 1701011384263,
                 _id: "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",

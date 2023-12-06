@@ -55,11 +55,7 @@ export const NavBar = () => {
 
                                 {role == 2 && (
                                     <>
-                                        <li className="nav-item">
-                                            <NavLink to="/orders" className="nav-link" activeclassname="active">
-                                                Поръчки
-                                            </NavLink>
-                                        </li>
+                                     
                                         <li className="nav-item">
                                             <NavLink to="/basket" className="nav-link" activeclassname="active">
                                                 Кошница
@@ -67,6 +63,11 @@ export const NavBar = () => {
                                         </li>
                                     </>
                                 )}
+                                   <li className="nav-item">
+                                            <NavLink to="/orders" className="nav-link" activeclassname="active">
+                                                Поръчки
+                                            </NavLink>
+                                        </li>
 
 
                                 <li className="nav-item">

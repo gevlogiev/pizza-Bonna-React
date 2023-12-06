@@ -8,7 +8,7 @@ const BasketContext = createContext();
 export const useBasket = () => {
   const context = useContext(BasketContext);
   if (!context) {
-   console.log('Err basket context');
+    console.log('Err basket context');
   }
   return context;
 };
@@ -29,8 +29,8 @@ export const BasketProvider = ({ children }) => {
 
     if (existingProductIndex !== -1) {  // ako imam veche takuv, dobavqm 1 kum kolichestvoto;
 
-      
-     
+
+
       setBasket((prevBasket) => {
         const updatedBasket = [...prevBasket];
         updatedBasket[existingProductIndex] = {
@@ -40,7 +40,7 @@ export const BasketProvider = ({ children }) => {
         return updatedBasket;
       });
     } else {
-    
+
       setBasket((prevBasket) => [...prevBasket, { ...product, quantity: 1 }]);
     }
 
@@ -69,19 +69,15 @@ export const BasketProvider = ({ children }) => {
   };
 
   const orderProducts = () => {
-  
-
-    
 
     ordersService.create(basket)
 
-   console.log(basket);
 
-  //  clearBasket();
+    clearBasket();
   };
 
   return (
-    <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket, clearBasket,orderProducts }}>
+    <BasketContext.Provider value={{ basket, addToBasket, removeFromBasket, clearBasket, orderProducts }}>
       {children}
     </BasketContext.Provider>
   );

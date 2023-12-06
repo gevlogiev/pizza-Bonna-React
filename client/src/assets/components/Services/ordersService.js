@@ -4,43 +4,28 @@ const baseUrl = 'http://localhost:3030/data/orders'
 
 export const getAll = async () => {
     const result = await request.get(baseUrl);
-    // console.log(result); 
+
     return Object.values(result);
 };
 
-// export const getDetails =  async (_id) => {
-//     const result = await request.get(`${baseUrl}/${_id}`, );
 
-//     return result;
-// }
+export const getAllForUser = async (_id) => {
+    
+    const query = new URLSearchParams({
+        where: `_ownerId="${_id}"`,
+    });
 
-// export const getLatest = async () => {
-//     const query = new URLSearchParams({
-//         offset: 0,
-//         pageSize: 3,
-//     });
-//     const result = await request.get(`${baseUrl}?sortBy=_createdOn%20desc&${query}`);
+    const result = await request.get(`${baseUrl}?${query}`);
 
-//     return result;
-// }
+    return result;
+};
 
 
 
 export const create = async (basketData) => {
-    const result = await request.post(baseUrl, basketData);
+    const result = await request.post(baseUrl, { products: basketData });
 
     return result;
 };
 
-export const edit = async (_id,productData) => {
-    const result = await request.put(`${baseUrl}/${_id}`, productData);
-console.log(result);
-    return result;
 
-};
-
-
-export const remove = async (productId) => {
-    const result = await request.remove(`${baseUrl}/${productId}` );
-    return result;
-};

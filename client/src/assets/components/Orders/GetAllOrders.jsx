@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
 
 import * as ordersService from './../Services/ordersService'
+import AuthContext from "../context/AuthContext";
 
 
 const GetAllOrders = () => {
@@ -9,127 +10,91 @@ const GetAllOrders = () => {
 
 
 
-
+    const {userId, role} = useContext(AuthContext) 
     const [orders, setOrders] = useState([]);
     const [showEditProduct, setShowEditProduct] = useState(false);
     const [editProduct, setEditProduct] = useState('');
 
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const result = await ordersService.getAll();
+              
+                let type = role == 2 ? ordersService.getAllForUser(userId) : ordersService.getAll();
+              
+                // Use await to fetch the data
+                const result = await type;
                 setOrders(result);
             } catch (error) {
                 console.error(error);
             }
         };
-
+    
         fetchData();
-    }, []);
+    }, [role, userId]); 
+    
 
 
-    console.log(orders);
-    // 	const handleEditClick = (product) => {
-    // 		setEditProduct(product)
-    // 		setShowEditProduct(true);
-    // 	};
-
-    // 	const closeModal = (e) => {
-    // 		setShowEditProduct(false);
-    // 	}
-
-
-    // 	const handleDeleteProduct = async (productId) => {
-    // 		try {
-    // 			const result = await request.remove(`${baseUrl}/${productId}`);
-    // 			setProducts((prevProducts) => prevProducts.filter(product => product._id !== productId));
-    // 			return result;
-    // 		} catch (err) {
-
-    // 			console.log(err);
-    // 			throw err;
-    // 		}
-    // 	};
 
 
     return (
         <div>
             <span>Поръчка</span>
-    {orders.map((order, index) => (
-      <div key={index}>{order._createdOn}</div>
-    ))}
-  </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>Дата на създаване</th>
+                        <th>Потребител</th>
+                        <th>Данни за поръчката</th>
 
-        // 		<>
-        //   <div className="container mt-5">
-        //     <div className="text-center mb-4">
-        //       <h2>Всички продукти</h2>
-        //     </div>
-        //     <table className="table table-bordered table-striped">
-        //       <thead>
-        //         <tr>
-        //           <th>Има не продукт</th>
-        //           <th>Категория</th>
-        //           <th>Цена малка</th>
-        //           <th>Цена голяма</th>
-        //           <th>Съставки</th>
-        //           <th>Редакция</th>
-        //           <th>Изтриване</th>
-        //         </tr>
-        //       </thead>
-        //       <tbody>
-        //         {products.map((product, index) => (
-        //           <tr key={index}>
-        //             <td>{index + 1}. {product.title}</td>
-        // 			<td>
-        //   {(() => {
-        //     switch (product.category) {
-        //       case 1:
-        //         return "Пица";
-        //       case 2:
-        //         return "Напиткa";
-        //       case 3:
-        //         return "Десерт";
-        //       case 4:
-        //         return "Алкохол";
-        //       default:
-        //         return "Непозната";
-        //     }
-        //   })()}
-        // </td>
-        //             <td>{product.priceSmall}</td>
-        //             <td>{product.priceBig}</td>
-        //             <td>{product.ingredients}</td>
-        //             <td>
-        //               <input
-        //                 type="button"
-        //                 className="btn btn-primary"
-        //                 value="Редакция"
-        //                 onClick={(e) => handleEditClick(product)}
-        //               />
-        //             </td>
-        //             <td>
-        //               <input
-        //                 type="button"
-        //                 className="btn btn-danger"
-        //                 value="Изтриване"
-        //                 onClick={(e) => handleDeleteProduct(product._id)}
-        //               />
-        //             </td>
-        //           </tr>
-        //         ))}
-        //       </tbody>
-        //     </table>
-        //     {showEditProduct && <EditProduct {...editProduct} closed={showEditProduct} closeModal={closeModal} />}
-        //     {products.length === 0 && <h3 className="no-articles text-center">Няма продукти</h3>}
-        //     <div className="text-center">
-        //       <Link to='/add-product' className="btn btn-success">
-        //         Добави продукт
-        //       </Link>
-        //     </div>
-        //   </div>
-        // </>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders.map((order, index) => (
+                        <>
+                            <tr>
+                                <td>{order._createdOn}</td>
+                                <td>{order._id}</td>
+
+                                <td>
+                                    <table className=" table-striped table-dark">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Име</th>
+                                                <th>Количество</th>
+                                                <th>Цена</th>
+                                                <th>Общо</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            {order.products.map((product, productIndex) => (
+                                                <tr>
+                                                    <>
+                                                        <td>{product.name}</td>
+                                                        <td>{product.quantity}</td>
+                                                        <td>{product.price}</td>
+                                                        <td>{(product.quantity * product.price).toFixed(2)}</td>
+                                                    </>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </>
+
+                    ))}
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+
 
     )
 
