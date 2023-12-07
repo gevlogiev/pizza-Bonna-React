@@ -49,7 +49,7 @@ const GetAllProducts = () => {
 
 	return (
 		<>
-  <div className="container mt-5">
+  <div className="container mt-5 h-cont">
     <div className="text-center mb-4">
       <h2>Всички продукти</h2>
     </div>

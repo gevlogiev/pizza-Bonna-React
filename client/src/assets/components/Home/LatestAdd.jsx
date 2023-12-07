@@ -9,7 +9,7 @@ import AuthContext from "../context/AuthContext";
 const Latest = () => {
 
     const { addToBasket } = useBasket();
-    const { isAuthenticated } = useContext(AuthContext)
+    const { isAuthenticated, role } = useContext(AuthContext)
     const [latestAdd, setLatestAdd] = useState([]);
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const Latest = () => {
                                     <h3>{pizza.title}</h3>
                                     <p>{pizza.ingredients} </p>
                                     <p className="price"><span>{pizza.priceSmall}</span>
-                                        {isAuthenticated && (
+                                        {isAuthenticated && role == 2 && (
 
                                             <a className="ml-2 btn btn-white btn-outline-white" onClick={() => handleAddToBasket({ name: pizza.title, price: pizza.priceSmall, id: pizza._id })}>
                                                 Добави

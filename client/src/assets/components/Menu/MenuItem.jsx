@@ -14,7 +14,7 @@ export default function MenuItem({
     ingredients
 }) {
     const { addToBasket } = useBasket()
-    const { isAuthenticated } = useContext(AuthContext)
+    const { isAuthenticated,role } = useContext(AuthContext)
     const handleAddToBasket = (product) => {
         addToBasket(product);
     };
@@ -41,7 +41,7 @@ export default function MenuItem({
     return (
         <>
 
-            <div className="pricing-entry d-flex ftco-animate">
+            <div className="pricing-entry d-flex ftco-animate ">
                 <img className="img" src={imageUrl} />
                 <div className="desc pl-3">
                     <div className="d-flex justify-content-between  text align-items-center">
@@ -51,7 +51,7 @@ export default function MenuItem({
                     </div>
                     <div className="d-block d-flex justify-content-between align-items-center">
                         <p>{ingredients}</p>
-                        {isAuthenticated && (
+                        {isAuthenticated &&   role == 2  && (
                             <a className="ml-2 btn btn-white btn-outline-white"
                                 onClick={() => handleAddToBasket({ name: title, price: priceSmall, id: _id })}
                             >Добави
