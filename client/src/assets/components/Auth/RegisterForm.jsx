@@ -27,10 +27,7 @@ const RegisterForm = () => {
         }
 
 
-        // console.log('User:', user);
-        // console.log('Password:', password);
-        // console.log('ConfPassword:', confPassword);
-        // console.log('Email:', email);
+    
 
     };
 

@@ -33,7 +33,7 @@ export const create = async (productData) => {
 
 export const edit = async (_id,productData) => {
     const result = await request.put(`${baseUrl}/${_id}`, productData);
-console.log(result);
+
     return result;
 
 };

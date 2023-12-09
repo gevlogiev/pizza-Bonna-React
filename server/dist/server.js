@@ -1321,22 +1321,22 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "peter@abv.bg",
-                username: "Peter",
+                email: "admin@abv.bg",
+                username: "Митко",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
                 role: '1'
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "george@abv.bg",
-                username: "George",
+                email: "user@abv.bg",
+                username: "Петя",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
                 role: '2'
 
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
-                email: "admin@abv.bg",
-                username: "Admin",
-                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
+                email: "user1@abv.bg",
+                username: "Ангел",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
                 role: '2'
             }
         },
@@ -1347,7 +1347,7 @@
         products: {
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
                 priceSmall: "4.60",
-                priceBig: "12.60",
+                priceBig: "9.60",
                 title: "Пица Маргарита",
                 category: 1,
                 imageUrl: "https://www.cicis.com/content/images/cicis/Jalapeno%20pizza.png",
@@ -1366,7 +1366,7 @@
                 imageUrl: "https://www.cicis.com/content/images/cicis/Jalapeno%20pizza.png",
                 ingredients: "Сметана, моцарела, шунка, бекон, домат",
                 allergens: "Месо",
-                description: "Допълнителна информация за продукта Пица",
+                description: "Шунката може да се замени с Пеперони",
                 _id:"8f414b4f-ab39-4d36-bedb-2ad69da9c830",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
                 _createdOn: 1613551279012
@@ -1375,29 +1375,60 @@
             "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
                 priceSmall: "4.60",
                 priceBig: "12.60",
-                title: "Пица Прошуто",
+                title: "Пица Миш Ям",
                 category: 1,
                 imageUrl: "https://www.cicis.com/content/images/cicis/Jalapeno%20pizza.png",
-                ingredients: "Доматен сос, моцарела, Прошуто, пипер",
-                allergens: "Риба",
-                description: "Допълнителна информация за продукта Риба123",
+                ingredients: "Доматен сос, моцарела, кайма, пипер",
+                allergens: "Месо",
+                description: "По стара селска рецепта",
                 _id:"985d9eab-ad2e-4622-a5c8-116261fb1fd2",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
                 _createdOn: 1613551279012
             }, 
              "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080": {
                 imageUrl :  "https://w7.pngwing.com/pngs/448/578/png-transparent-pizza-margherita-italian-cuisine-chicago-style-pizza-pepperoni-pizza-thumbnail.png",
-                ingredients : "tttt",
-                allergens: "Алерген",
-                description: "Допълнителна информация за 234",
-                priceBig: "44",
-                priceSmall :"123",
-                title :"123",
+                ingredients : "Специален сос, Моцарела, Телешко",
+                allergens: "Месо",
+                description: "Каймата е смес",
+                priceBig: "14.30",
+                priceSmall :"5.80",
+                title :"Буркер Пица",
                 _createdOn: 1701011384263,
                 _id: "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080",
                 _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
               
-            }
+            },
+            'd1c9e2f0-5c0e-4459-8cd4-88bd63b8c082':{
+                priceSmall: '6.60',
+                priceBig: '15.60',
+                title: 'Пица Тоната',
+                category: 1,
+                imageUrl: 'https://www.cicis.com/content/images/cicis/Jalapeno%20pizza.png',
+                ingredients: 'Доматен сос, моцарела, Риба, пипер, сушени домати',
+                allergens: 'Риба, мляко',
+                _id: '985d9eab-ad2e-4622-a5c8-116261fb1fd2',
+                description: 'Може да се поръча със сметана',
+                priceBig: '13.60',
+                priceSmall: '8.15',
+                title: 'Четири сирена',
+                _createdOn: 1701011384263,
+                _id: 'd1c9e2f0-5c0e-4459-8cd4-88bd63b8c082',
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8'
+              },
+              '8f414b4f-ab39-4d36-bedb-2ad69da9c850': {
+                priceSmall: '7.60',
+                priceBig: '11.60',
+                title: 'Пица Вегетаряна',
+                category: 3,
+                imageUrl: 'https://www.cicis.com/content/images/cicis/Jalapeno%20pizza.png',
+                ingredients: 'Пица сос, гъби, пипер, моцарела, маслини',
+                allergens: 'Мляко',
+                description: 'Напълно вегетарянска пица',
+                _id: '8f414b4f-ab39-4d36-bedb-2ad69da9c850',
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+                _createdOn: 1613551279012
+              }
+
         },
         comments: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
@@ -1488,18 +1519,39 @@
         },
         orders: {
             "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080": {
-                // username : 'Петър',
-                // totalPrice : "tttt",
-                // note: "Допълнителна информация за 234",
                 products: [  
                     {name: 'Пица Маргарита', price: '4.60', quantity: 3},
                     {name: 'Пица Италиана', price: '4.60', quantity: 2},
                 ],
                 _createdOn: 1701011384263,
                 _id: "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080",
-                _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
-              
-            }
+                _ownerId:"847ec027-f659-4086-8032-5173e2f9c93a",  
+            },
+            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
+                products: [
+                  {
+                    name: 'Пица Маргарита',
+                    price: '4.60',
+                    id: '3987279d-0ad4-4afb-8ca9-5b256ae3b298',
+                    quantity: 1
+                  },
+                  {
+                    name: 'Четири сирена',
+                    price: '8.15',
+                    id: 'd1c9e2f0-5c0e-4459-8cd4-88bd63b8c082',
+                    quantity: 2
+                  },
+                  {
+                    name: 'Пица Италиана',
+                    price: '4.60',
+                    id: '8f414b4f-ab39-4d36-bedb-2ad69da9c830',
+                    quantity: 1
+                  }
+                ],
+                _createdOn: 1701011384263,
+                _id: "d1c9e2f0-5c0e-4459-8cd4-88bd63b8c080",
+                _ownerId:"847ec027-f659-4086-8032-5173e2f9c93a",  
+              }
 
         },
         movies: {
