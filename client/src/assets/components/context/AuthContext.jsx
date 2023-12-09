@@ -23,7 +23,7 @@ export const AuthProvider = ({
     const loginSubmitHandler = async (values) => {
     
         const result = await authService.login(values.email, values.password);
-        console.log(result);
+      
         setAuth(result);
         
         localStorage.removeItem('basket');
@@ -69,7 +69,7 @@ export const AuthProvider = ({
 
         }
 
-        console.log(values);
+       
 
         const result = await authService.register(values.email, values.password, 2); // Register only with role 2
 
